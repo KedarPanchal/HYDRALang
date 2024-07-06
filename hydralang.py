@@ -27,7 +27,19 @@ def main():
                     if len(heads) == 0:
                         break
                 case '[':
-                    bracket_stack.append(i)
+                    if heads[head_idx] >= 0b10000000:
+                        bracket_stack.append(i)
+                    else:
+                        bracket_count = 1
+                        for j in range(i, len(code)):
+                            if code[j] == '[':
+                                bracket_count += 1
+                            elif code[j] == ']':
+                                bracket_count -= 1
+                            
+                            if bracket_count == 0:
+                                i = j
+                                break
                 case ']':
                     if len(bracket_stack) == 0:
                         raise SyntaxError(f"Error: Mismatched bracket at command {i}")
