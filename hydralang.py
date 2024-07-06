@@ -20,8 +20,6 @@ def main():
                     heads.append(heads[head_idx])
                 case '>':
                     head_idx = 0 if (head_idx + 1) == len(heads) else (head_idx + 1)
-                case '<':
-                    head_idx = (len(heads) - 1) if head_idx == 0 else (head_idx - 1)
                 case '!':
                     print(chr(heads[head_idx]), end='')
                 case '#':
