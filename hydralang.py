@@ -35,8 +35,8 @@ def main():
                     else:
                         raise SyntaxError(f"Error: Mismatched bracket at command {i}")
                 case _:
-                    raise SyntaxError(f"Error at command {i}: Command {code[i]} not supported")
-        
+                    if not code[i].isspace():     
+                        raise SyntaxError(f"Error at command {i}: Command {code[i]} not supported")
             i += 1
     except SyntaxError as e:
         print(e.message, file=sys.stderr)
