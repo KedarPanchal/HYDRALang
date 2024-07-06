@@ -31,6 +31,7 @@ def main():
                         bracket_stack.append(i)
                     else:
                         bracket_count = 1
+                        i_start = i
                         for j in range(i, len(code)):
                             if code[j] == '[':
                                 bracket_count += 1
@@ -40,6 +41,8 @@ def main():
                             if bracket_count == 0:
                                 i = j
                                 break
+                        if i == i_start:
+                            raise SyntaxError(f"Error: Mismatched bracket at command {i}")
                 case ']':
                     if len(bracket_stack) == 0:
                         raise SyntaxError(f"Error: Mismatched bracket at command {i}")
