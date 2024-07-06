@@ -29,11 +29,10 @@ def main():
                 case '[':
                     bracket_stack.append(i)
                 case ']':
-                    if len(bracket_stack) > 0:
-                        if heads[head_idx] >= 0b10000000:
-                            i = bracket_stack.pop() - 1
-                    else:
+                    if len(bracket_stack) == 0:
                         raise SyntaxError(f"Error: Mismatched bracket at command {i}")
+                    elif heads[head_idx] >= 0b10000000:
+                        i = bracket_stack.pop() - 1                      
                 case _:
                     if not code[i].isspace():     
                         raise SyntaxError(f"Error at command {i}: Command {code[i]} not supported")
