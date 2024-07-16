@@ -49,8 +49,7 @@ def main():
                     elif heads[head_idx] >= 0b10000000:
                         i = bracket_stack.pop() - 1                      
                 case _:
-                    if not code[i].isspace():     
-                        raise SyntaxError(f"Error at command {i}: Command {code[i]} not supported")
+                    continue
             i += 1
     except SyntaxError as e:
         print(e.message, file=sys.stderr)
