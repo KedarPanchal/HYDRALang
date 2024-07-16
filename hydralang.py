@@ -26,6 +26,7 @@ def main():
                     del heads[head_idx]
                     if len(heads) == 0:
                         break
+                    head_idx = head_idx - 1 if head_idx > 0 else len(heads) - 1
                 case '[':
                     if heads[head_idx] >= 0b10000000:
                         bracket_stack.append(i)
