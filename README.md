@@ -56,3 +56,10 @@ HYDRALang has 8 commands that can be used to perform various operations on the h
 * `#` deletes the current head. The new current head becomes the head before the most recently deleted head, or the last head in the list if the recently deleted head was the first head in the list. If deleting a head would cause there to be no heads left, the program terminates.
 * `[` skips to the command past its matching `]` if the decimal value of the current head is less than `128`.
 * `]` goes back to its matching `[` command if the decimal value of the current head is greater than or equal to `128`.
+
+## License
+
+---
+[Back to top](#table-of-contents)  
+The BSD 3-Clause License (BSD-3) 2024 - [Kedar Panchal](https://github.com/KedarPanchal). Please look at the
+[LICENSE](LICENSE) for further information.
